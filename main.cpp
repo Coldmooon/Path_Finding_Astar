@@ -54,6 +54,7 @@ void astar(unsigned char * map, int width, int height, int s, int e, int * came_
             }
         }
     }
+    delete [] cost_so_far;
 }
 
 int main(int argc, const char * argv[]) {
@@ -111,5 +112,7 @@ int main(int argc, const char * argv[]) {
     cv::imshow("path", image);
     cv::waitKey(0);
     // cv::imwrite("path.jpg", image);
+
+    delete [] came_from;
     return 0;
 }
